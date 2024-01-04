@@ -1,0 +1,10 @@
+{% autoescape off %}
+
+Cześć {{ user.first_name }},
+
+ Prosze o klinięcie linku poniżej w celu aktywacji konta
+ http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+ Zignoruj tę wiadomość jeśli cię nie dotyczy.
+
+{% endautoescape %}

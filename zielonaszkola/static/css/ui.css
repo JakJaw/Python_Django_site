@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* ==== BASE STYLES ====*/
 /* ==================== GLOBAL STYLES ======================= */
 @import url("https://rsms.me/inter/inter.css");
 html {
@@ -7,9 +6,6 @@ html {
   font-size: 15px;
 }
 
-/* ========================
-INCLUDE STYLES AND COMPONENTS
-===================== */
 /* ================== HELPERS  =================== */
 a:hover {
   text-decoration: none;
@@ -146,7 +142,6 @@ a:hover {
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #3167eb, #3167eb);
-  /* Standard syntax */
   transition: 0.5s;
 }
 
@@ -218,7 +213,6 @@ figure {
   height: 2.875rem;
 }
 
-/* all clearfix */
 article:after,
 .form-group:after {
   display: block;
@@ -1341,8 +1335,8 @@ a[class*=card]:hover .title {
   padding-bottom: 5px;
 }
 
-/* ================== PAGES =================== */
-/* ================ PAGES HEADER ================== */
+/* ================== Strony =================== */
+/* ================ Nagłówki ================== */
 .section-pagetop {
   padding: 45px 0;
 }

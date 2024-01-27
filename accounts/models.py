@@ -2,6 +2,7 @@ from typing import Any
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 
 # Create your models here.
 
@@ -40,7 +41,7 @@ class Myaccountmanager(BaseUserManager):
         return user
 
 
-class Account(AbstractBaseUser):
+class Account(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50, verbose_name=_('First name'))
     last_name = models.CharField(max_length=50, verbose_name=_('Last name'))
     username = models.CharField(max_length=50, unique=True, verbose_name=_('Username'))
@@ -70,8 +71,8 @@ class Account(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         return self.is_admin
     
-    def has_module_perms(self, add_label):
-        return True
+    def has_module_perms(self, app_label):
+        return self.is_admin
     
     def fullname(self):
         return f"{self.first_name} {self.last_name}"

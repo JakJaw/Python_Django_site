@@ -3,10 +3,10 @@
 }
 
 @media (max-width: 1200px) {
-  /* tablet devices */
+  /* tablety */
 }
 @media (max-width: 992px) {
-  /* small tablet devices */
+  /* małe tablety */
   .slider-main .item-slide {
     height: auto;
   }
@@ -22,7 +22,7 @@
   }
 }
 @media all and (max-width: 768px) {
-  /* mobile devices */
+  /* smartfony */
   .mobile-block {
     display: block;
   }

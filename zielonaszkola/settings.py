@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,17 +44,18 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'orders',
+    'i18n_switcher',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'zielonaszkola.urls'
@@ -60,7 +63,7 @@ ROOT_URLCONF = 'zielonaszkola.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,14 +116,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LANGUAGE_CODE = 'pl'
+LANGUAGES = [
+    ('pl', _('Polish')),
+    ('en', _('English')),
+    ('de', _('German')),
+    ('es', _('Spanish')),
+]
+TIME_ZONE = 'Europe/Warsaw'
+DATETIME_FORMAT = 'd-m-Y H:i:s'
+DATE_FORMAT = 'Y-m-d'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -154,3 +162,5 @@ EMAIL_PORT = 587 #gmail port
 EMAIL_HOST_USER = 'jakjaw01@gmail.com'
 EMAIL_HOST_PASSWORD = 'ebra huuh ifxx wrhw' #Wygenerowane hasło aplikacji
 EMAIL_USE_TLS = True
+
+DATETIME_FORMAT="%Y-%m-%d%H:%M:"

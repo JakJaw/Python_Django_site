@@ -12,25 +12,15 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from django.utils.translation import gettext_lazy as _
+from django.contrib.messages import constants as messages
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '*!5iem)+@p(z$%zuc1kg%vcb&_66(eib%5ofq3pj-2z862$$@3'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -84,9 +74,6 @@ WSGI_APPLICATION = 'zielonaszkola.wsgi.application'
 AUTH_USER_MODEL = 'accounts.Account'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -94,9 +81,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -114,9 +98,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 LANGUAGE_CODE = 'pl'
 LANGUAGES = [
@@ -133,21 +114,15 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR /'static'
 STATICFILES_DIRS = [
     'zielonaszkola/static',
 ]
 
-#media files config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 
-
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
@@ -165,3 +140,51 @@ EMAIL_HOST_PASSWORD = 'ebra huuh ifxx wrhw' #Wygenerowane hasło aplikacji
 EMAIL_USE_TLS = True
 
 DATETIME_FORMAT="%Y-%m-%d%H:%M:"
+
+JAZZMIN_SETTINGS = {
+    "copyright": "Jakub Jaworski",
+    "show_ui_builder": False, #Customizer
+    "search_model": ["auth.User"],
+    "welcome_sign": _("Welcome to the admin panel login"),
+    "topmenu_links": [
+        {"name": _("Polski"), "url": 'http://127.0.0.1:8000/pl/admin/'},
+        {"name": _("English"), "url": 'http://127.0.0.1:8000/en/admin/'},
+        {"name": _("Spanish"), "url": 'http://127.0.0.1:8000/es/admin/'},
+        {"name": _("Deutsh"), "url": 'http://127.0.0.1:8000/de/admin/'},
+        {"name": _("View site"), "url": 'http://127.0.0.1:8000/en/'},
+        {"name": _("Log out"), "url": 'logout'},
+    ]
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-success",
+    "accent": "accent-warning",
+    "navbar": "navbar-teal navbar-dark",
+    "no_navbar_border": True,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": True,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-olive",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "cyborg",
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    },
+    "actions_sticky_top": False
+}

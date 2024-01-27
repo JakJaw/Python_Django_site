@@ -1,6 +1,7 @@
 from django.apps import AppConfig
+from django.utils.translation import gettext_lazy as _
 
 
 class CartsConfig(AppConfig):
     name = 'carts'
-    verbose_name = "Koszyki Klientów"
+    verbose_name = _("Carts")

@@ -36,7 +36,7 @@ admin.site.site_title = _('My Site Management')"""
     path('orders/', include('orders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"""
 
-admin.site.site_header = _("ZielonaSzkółka Admin Panel")
+admin.site.site_header = _("ZielonaSzkółka")
 admin.site.site_title = _("Dashboard")
 admin.site.index_title = _("Welcome to admin panel!")
 urlpatterns = i18n_patterns(

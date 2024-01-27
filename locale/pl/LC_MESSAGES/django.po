@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 16:20+0100\n"
+"POT-Creation-Date: 2024-01-27 16:34+0100\n"
 "Last-Translator: Jakub Jaworski <jakjaw01@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -115,6 +115,10 @@ msgstr "Profil Użytkownika"
 msgid "User Profiles"
 msgstr "Profile Użytkownika"
 
+#: .\carts\apps.py:7 .\carts\models.py:12
+msgid "Carts"
+msgstr "Koszyki"
+
 #: .\carts\models.py:7
 msgid "Cart ID"
 msgstr "Koszyk ID"
@@ -126,10 +130,6 @@ msgstr "Data dołączenia"
 #: .\carts\models.py:11 .\carts\models.py:22
 msgid "Cart"
 msgstr "Koszyk"
-
-#: .\carts\models.py:12
-msgid "Carts"
-msgstr "Koszyki"
 
 #: .\carts\models.py:20 .\orders\models.py:70 .\store\models.py:22
 #: .\store\models.py:60 .\store\models.py:77 .\store\models.py:96
@@ -1646,19 +1646,19 @@ msgstr "Społeczność Django"
 msgid "Connect, get help, or contribute"
 msgstr "Połącz, otrzymaj pomoc"
 
-#: .\zielonaszkola\settings.py:123
+#: .\zielonaszkola\settings.py:104
 msgid "Polish"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:124
+#: .\zielonaszkola\settings.py:105
 msgid "English"
 msgstr "Angielski"
 
-#: .\zielonaszkola\settings.py:125
+#: .\zielonaszkola\settings.py:106
 msgid "German"
 msgstr "Niemiecki"
 
-#: .\zielonaszkola\settings.py:126
+#: .\zielonaszkola\settings.py:107
 msgid "Spanish"
 msgstr "Hiszpański"
 

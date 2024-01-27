@@ -14,16 +14,37 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
-urlpatterns = [
+#Custom Admin Titles
+"""admin.site.index_title = _('My Index Title')
+admin.site.site_header = _('My Site Administration')
+admin.site.site_title = _('My Site Management')"""
+
+# Test 1
+"""urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),
     path('orders/', include('orders.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"""
+
+admin.site.site_header = _("ZielonaSzkółka Admin Panel")
+admin.site.site_title = _("Dashboard")
+admin.site.index_title = _("Welcome to admin panel!")
+urlpatterns = i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('store/', include('store.urls')),
+    path('cart/', include('carts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('orders/', include('orders.urls')),
+    prefix_default_language=True #
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

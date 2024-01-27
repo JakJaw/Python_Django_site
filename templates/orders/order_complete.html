@@ -39,7 +39,7 @@
                                     <ul class="list-unstyled mb0">
                                         <li><strong>Numer zamówienia: </strong>{{ order_number }}</li>
                                         <li><strong>Numer transakcji: </strong>{{ transID }}</li>
-                                        <li><strong>Data zamówienia: </strong>{{ order.created_at }}</li>
+                                        <li><strong>Data zamówienia: </strong>{{ order.created_at|date:"Y/n/j G:i" }}</li>
                                         <li><strong>Status zamówienia: </strong>{{ payment.status }}</li>
                                     </ul>
                                 </div>

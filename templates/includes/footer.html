@@ -1,4 +1,5 @@
-<!-- ========================= FOOTER ========================= -->
+
+
 <footer class="section-footer border-top">
 	<div class="container">
 		<section class="footer-bottom border-top row">
@@ -11,12 +12,26 @@
 				<span  class="px-2">Mysłowicka 2137 tychy</span>
 			</div>
 			<div class="col-md-2 text-md-right text-muted">
-				<p>Przyjmujemy płatności:</p>
-				<i class="fab fa-lg fa-cc-visa"></i>
-				<i class="fab fa-lg fa-cc-paypal"></i>
-				<i class="fab fa-lg fa-cc-mastercard"></i>
+				<p>Przyjmujemy płatności:
+					<i class="fab fa-lg fa-cc-visa"></i>
+					<i class="fab fa-lg fa-cc-paypal"></i>
+				</p>
 			</div>
 		</section>
-	</div><!-- //container -->
+	</div>
 </footer>
-<!-- ========================= FOOTER END // ========================= -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+
+
+</body>
+</html>

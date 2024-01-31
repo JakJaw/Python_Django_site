@@ -13,12 +13,15 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from django.utils.translation import gettext_lazy as _
 from django.contrib.messages import constants as messages
+from decouple import config
 from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-SECRET_KEY = '*!5iem)+@p(z$%zuc1kg%vcb&_66(eib%5ofq3pj-2z862$$@3'
-DEBUG = True
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=True, cast=bool)
+
 ALLOWED_HOSTS = []
 
 
@@ -36,6 +39,7 @@ INSTALLED_APPS = [
     'carts',
     'orders',
     'i18n_switcher',
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [
@@ -100,12 +104,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 LANGUAGE_CODE = 'pl'
+
 LANGUAGES = [
     ('pl', _('Polish')),
     ('en', _('English')),
     ('de', _('German')),
     ('es', _('Spanish')),
 ]
+
 TIME_ZONE = 'Europe/Warsaw'
 DATETIME_FORMAT = 'd-m-Y H:i:s'
 DATE_FORMAT = 'Y-m-d'
@@ -133,11 +139,11 @@ REST_FRAMEWORK = {
 
 
 # SMTP Configuration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587 #gmail port
-EMAIL_HOST_USER = 'jakjaw01@gmail.com'
-EMAIL_HOST_PASSWORD = 'ebra huuh ifxx wrhw' #Wygenerowane hasło aplikacji
-EMAIL_USE_TLS = True
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int) #gmail port
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') #Wygenerowane hasło aplikacji
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 DATETIME_FORMAT="%Y-%m-%d%H:%M:"
 
@@ -146,14 +152,17 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": False, #Customizer
     "search_model": ["auth.User"],
     "welcome_sign": _("Welcome to the admin panel login"),
+    "usermenu_links": [
+        {"name": _("Log out"), "url": "logout", "new_window": False},
+    ],
     "topmenu_links": [
-        {"name": _("Polski"), "url": 'http://127.0.0.1:8000/pl/admin/'},
-        {"name": _("English"), "url": 'http://127.0.0.1:8000/en/admin/'},
-        {"name": _("Spanish"), "url": 'http://127.0.0.1:8000/es/admin/'},
-        {"name": _("Deutsh"), "url": 'http://127.0.0.1:8000/de/admin/'},
+        {"name": _("Polski"), "url": 'http://127.0.0.1:8000/pl/ukrytyadmin/'},
+        {"name": _("English"), "url": 'http://127.0.0.1:8000/en/ukrytyadmin/'},
+        {"name": _("Spanish"), "url": 'http://127.0.0.1:8000/es/ukrytyadmin/'},
+        {"name": _("Deutsh"), "url": 'http://127.0.0.1:8000/de/ukrytyadmin/'},
         {"name": _("View site"), "url": 'http://127.0.0.1:8000/en/'},
         {"name": _("Log out"), "url": 'logout'},
-    ]
+    ],
 }
 
 JAZZMIN_UI_TWEAKS = {

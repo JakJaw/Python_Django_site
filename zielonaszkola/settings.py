@@ -51,7 +51,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
+
+SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_TIMEOUT_REDIRECT = 'http://127.0.0.1:8000/en/accounts/login/'
 
 ROOT_URLCONF = 'zielonaszkola.urls'
 
@@ -152,8 +157,26 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": False, #Customizer
     "search_model": ["auth.User"],
     "welcome_sign": _("Welcome to the admin panel login"),
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "category.Category": "fas fa-layer-group",
+        "admin_honeypot.LoginAttempt": "fas fa-bug",
+        "accounts.Account": "fas fa-users",
+        "accounts.UserProfile": "fas fa-user",
+        "carts.Cart": "fas fa-cart-arrow-down",
+        "carts.CartItem": "fas fa-bars",
+        "orders.Order": "fas fa-id-card",
+        "orders.OrderProduct": "fas fa-bars",
+        "orders.Payment": "fas fa-credit-card",
+        "store.Product": "fas fa-tree",
+        "store.ReviewRating": "fas fa-star",
+        "store.ProductGallery": "fas fa-image",
+        "store.Variation": "fas fa-bars",
+    },
     "usermenu_links": [
-        {"name": _("Log out"), "url": "logout", "new_window": False},
+        {"name": _("Home"), "url": "http://127.0.0.1:8000/en/", "new_window": False},
     ],
     "topmenu_links": [
         {"name": _("Polski"), "url": 'http://127.0.0.1:8000/pl/ukrytyadmin/'},
@@ -161,7 +184,6 @@ JAZZMIN_SETTINGS = {
         {"name": _("Spanish"), "url": 'http://127.0.0.1:8000/es/ukrytyadmin/'},
         {"name": _("Deutsh"), "url": 'http://127.0.0.1:8000/de/ukrytyadmin/'},
         {"name": _("View site"), "url": 'http://127.0.0.1:8000/en/'},
-        {"name": _("Log out"), "url": 'logout'},
     ],
 }
 
@@ -197,3 +219,6 @@ JAZZMIN_UI_TWEAKS = {
     },
     "actions_sticky_top": False
 }
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

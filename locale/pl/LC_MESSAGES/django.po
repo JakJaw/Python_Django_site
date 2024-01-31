@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 14:09+0100\n"
+"POT-Creation-Date: 2024-01-31 17:09+0100\n"
 "Last-Translator: Jakub Jaworski <jakjaw01@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgstr "Jest aktywny"
 msgid "Is superadmin"
 msgstr "Jest superadminem"
 
-#: .\accounts\models.py:65
+#: .\accounts\models.py:65 .\templates\admin\base.html:160
 msgid "Account"
 msgstr "Konto Użytkownika"
 
@@ -113,7 +113,7 @@ msgstr "Profil Użytkownika"
 
 #: .\accounts\models.py:92
 msgid "User Profiles"
-msgstr "Profile Użytkownika"
+msgstr "Profile Użytkowników"
 
 #: .\carts\apps.py:7 .\carts\models.py:12
 msgid "Carts"
@@ -336,22 +336,65 @@ msgstr "Galeria produktu"
 msgid "Products Galleries"
 msgstr "Galeria produktów"
 
+#: .\templates\admin\base.html:99
+#, fuzzy
+#| msgid "March"
+msgid "Search"
+msgstr "Marzec"
+
+#: .\templates\admin\base.html:163 .\templates\admin\base_site.html:27
+msgid "Change password"
+msgstr "Zmień hasło"
+
+#: .\templates\admin\base.html:167 .\zielonaszkola\settings.py:179
+msgid "Home"
+msgstr ""
+
+#: .\templates\admin\base.html:171 .\templates\admin\base_site.html:29
+msgid "Log out"
+msgstr "Wyloguj"
+
+#: .\templates\admin\base.html:182
+#, fuzzy
+#| msgid "User Profile"
+msgid "See Profile"
+msgstr "Profil Użytkownika"
+
+#: .\templates\admin\base.html:222 .\zielonaszkola\urls.py:40
+msgid "Dashboard"
+msgstr "Panel główny"
+
+#: .\templates\admin\base.html:334
+msgid "Jazzmin version"
+msgstr ""
+
+#: .\templates\admin\base.html:337
+msgid "Copyright"
+msgstr ""
+
+#: .\templates\admin\base.html:337
+msgid "All rights reserved."
+msgstr ""
+
+#: .\templates\admin\base.html:353
+msgid "UI Configuration"
+msgstr ""
+
+#: .\templates\admin\base.html:357
+msgid "Copy this info your settings file to persist these UI changes"
+msgstr ""
+
+#: .\templates\admin\base.html:361
+msgid "Close"
+msgstr ""
+
 #: .\templates\admin\base_site.html:21
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: .\templates\admin\base_site.html:25 .\zielonaszkola\settings.py:163
+#: .\templates\admin\base_site.html:25 .\zielonaszkola\settings.py:186
 msgid "View site"
 msgstr "Odwiedź strone"
-
-#: .\templates\admin\base_site.html:27
-msgid "Change password"
-msgstr "Zmień hasło"
-
-#: .\templates\admin\base_site.html:29 .\zielonaszkola\settings.py:156
-#: .\zielonaszkola\settings.py:164
-msgid "Log out"
-msgstr "Wyloguj"
 
 #: .\virtualenviroment\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
@@ -1651,41 +1694,37 @@ msgstr "Połącz, otrzymaj pomoc"
 msgid "ipware app"
 msgstr "Łapacz IP"
 
-#: .\zielonaszkola\settings.py:109
+#: .\zielonaszkola\settings.py:114
 msgid "Polish"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:110 .\zielonaszkola\settings.py:160
+#: .\zielonaszkola\settings.py:115 .\zielonaszkola\settings.py:183
 msgid "English"
 msgstr "Angielski"
 
-#: .\zielonaszkola\settings.py:111
+#: .\zielonaszkola\settings.py:116
 msgid "German"
 msgstr "Niemiecki"
 
-#: .\zielonaszkola\settings.py:112 .\zielonaszkola\settings.py:161
+#: .\zielonaszkola\settings.py:117 .\zielonaszkola\settings.py:184
 msgid "Spanish"
 msgstr "Hiszpański"
 
-#: .\zielonaszkola\settings.py:154
+#: .\zielonaszkola\settings.py:159
 msgid "Welcome to the admin panel login"
 msgstr "Witaj w panelu administratora"
 
-#: .\zielonaszkola\settings.py:159
+#: .\zielonaszkola\settings.py:182
 msgid "Polski"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:162
+#: .\zielonaszkola\settings.py:185
 msgid "Deutsh"
 msgstr "Niemiecki"
 
 #: .\zielonaszkola\urls.py:39
 msgid "ZielonaSzkółka"
 msgstr "ZielonaSzkółka"
-
-#: .\zielonaszkola\urls.py:40
-msgid "Dashboard"
-msgstr "Panel główny"
 
 #: .\zielonaszkola\urls.py:41
 msgid "Welcome to admin panel!"

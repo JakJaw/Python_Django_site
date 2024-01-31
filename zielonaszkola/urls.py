@@ -40,7 +40,8 @@ admin.site.site_header = _("ZielonaSzkółka")
 admin.site.site_title = _("Dashboard")
 admin.site.index_title = _("Welcome to admin panel!")
 urlpatterns = i18n_patterns(
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('ukrytyadmin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),

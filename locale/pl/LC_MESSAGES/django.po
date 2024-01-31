@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 16:34+0100\n"
+"POT-Creation-Date: 2024-01-31 14:09+0100\n"
 "Last-Translator: Jakub Jaworski <jakjaw01@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -340,7 +340,7 @@ msgstr "Galeria produktów"
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: .\templates\admin\base_site.html:25
+#: .\templates\admin\base_site.html:25 .\zielonaszkola\settings.py:163
 msgid "View site"
 msgstr "Odwiedź strone"
 
@@ -348,7 +348,8 @@ msgstr "Odwiedź strone"
 msgid "Change password"
 msgstr "Zmień hasło"
 
-#: .\templates\admin\base_site.html:29
+#: .\templates\admin\base_site.html:29 .\zielonaszkola\settings.py:156
+#: .\zielonaszkola\settings.py:164
 msgid "Log out"
 msgstr "Wyloguj"
 
@@ -1646,25 +1647,41 @@ msgstr "Społeczność Django"
 msgid "Connect, get help, or contribute"
 msgstr "Połącz, otrzymaj pomoc"
 
-#: .\zielonaszkola\settings.py:104
+#: .\virtualenviroment\Lib\site-packages\ipware\apps.py:10
+msgid "ipware app"
+msgstr "Łapacz IP"
+
+#: .\zielonaszkola\settings.py:109
 msgid "Polish"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:105
+#: .\zielonaszkola\settings.py:110 .\zielonaszkola\settings.py:160
 msgid "English"
 msgstr "Angielski"
 
-#: .\zielonaszkola\settings.py:106
+#: .\zielonaszkola\settings.py:111
 msgid "German"
 msgstr "Niemiecki"
 
-#: .\zielonaszkola\settings.py:107
+#: .\zielonaszkola\settings.py:112 .\zielonaszkola\settings.py:161
 msgid "Spanish"
 msgstr "Hiszpański"
 
+#: .\zielonaszkola\settings.py:154
+msgid "Welcome to the admin panel login"
+msgstr "Witaj w panelu administratora"
+
+#: .\zielonaszkola\settings.py:159
+msgid "Polski"
+msgstr "Polski"
+
+#: .\zielonaszkola\settings.py:162
+msgid "Deutsh"
+msgstr "Niemiecki"
+
 #: .\zielonaszkola\urls.py:39
-msgid "ZielonaSzkółka Admin Panel"
-msgstr "Panel administracyjny"
+msgid "ZielonaSzkółka"
+msgstr "ZielonaSzkółka"
 
 #: .\zielonaszkola\urls.py:40
 msgid "Dashboard"

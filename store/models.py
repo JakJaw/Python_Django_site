@@ -10,7 +10,7 @@ class Product(models.Model):
     product_name = models.CharField(max_length=200, unique=True, verbose_name=_('Product name'))
     slug = models.SlugField(max_length=200, unique=True, verbose_name=_('Slug'))
     description = models.TextField(max_length=200, blank=True, verbose_name=_('Describtion'))
-    price = models.IntegerField(verbose_name=_('Price'))
+    price = models.FloatField(verbose_name=_('Price'))
     image = models.ImageField(upload_to='photos/products', verbose_name=_('Image'))
     stock = models.IntegerField(verbose_name=_('Stock'))
     is_available = models.BooleanField(default=True, verbose_name=_('Is avaible'))

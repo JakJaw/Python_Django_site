@@ -348,7 +348,7 @@ msgstr "Zmień hasło"
 
 #: .\templates\admin\base.html:167 .\zielonaszkola\settings.py:179
 msgid "Home"
-msgstr ""
+msgstr "Strona główna"
 
 #: .\templates\admin\base.html:171 .\templates\admin\base_site.html:29
 msgid "Log out"
@@ -366,27 +366,27 @@ msgstr "Panel główny"
 
 #: .\templates\admin\base.html:334
 msgid "Jazzmin version"
-msgstr ""
+msgstr "Wersja Jazzmin"
 
 #: .\templates\admin\base.html:337
 msgid "Copyright"
-msgstr ""
+msgstr "Prawo autorskie"
 
 #: .\templates\admin\base.html:337
 msgid "All rights reserved."
-msgstr ""
+msgstr "Wszelkie prawa zastrzeżone."
 
 #: .\templates\admin\base.html:353
 msgid "UI Configuration"
-msgstr ""
+msgstr "Konfiguracja interfejsu użytkownika"
 
 #: .\templates\admin\base.html:357
 msgid "Copy this info your settings file to persist these UI changes"
-msgstr ""
+msgstr "Skopiuj te informacje do pliku ustawień, aby zachować zmiany w interfejsie użytkownika"
 
 #: .\templates\admin\base.html:361
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #: .\templates\admin\base_site.html:21
 msgid "Documentation"
@@ -597,7 +597,7 @@ msgstr "%(model_name) z %(field_labels) już istnieje"
 #: .\virtualenviroment\Lib\site-packages\django\db\models\constraints.py:20
 #, python-format
 msgid "Constraint “%(name)s” is violated."
-msgstr ""
+msgstr "Naruszono ograniczenie “%(name)s”."
 
 #: .\virtualenviroment\Lib\site-packages\django\db\models\fields\__init__.py:133
 #, python-format

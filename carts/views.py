@@ -168,9 +168,10 @@ def cart(request, total=0, quantity=0, cart_items=None):
             cart_items = CartItem.objects.filter(cart=cart, is_active=True)
         for cart_item in cart_items:
            total += (cart_item.product.price * cart_item.quantity)
+           total = round(total,2)
            quantity += cart_item.quantity 
         tax = round(((23 * total)/100), 2)
-        grand_total = total + tax
+        grand_total = round(total + tax, 2)
     except ObjectDoesNotExist:
         pass
     
@@ -197,9 +198,10 @@ def checkout(request, total=0, quantity=0, cart_items=None):
 
         for cart_item in cart_items:
            total += (cart_item.product.price * cart_item.quantity)
+           total = round(total,2)
            quantity += cart_item.quantity 
         tax = round(((23 * total)/100), 2)
-        grand_total =  total + tax
+        grand_total =  round(total + tax, 2)
     except ObjectDoesNotExist:
         pass
     

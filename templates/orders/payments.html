@@ -5,22 +5,23 @@
 
 <section class="section-content padding-y bg">
     <div class="container">
-        <!--<h4 class="text-center mb-10">Opłać swoje zamówienie i oceń nas!</h4>-->
         <div class="row">
         <aside class="col-lg-8">
-            <h4 class="text-center mb-10">Opłać swoje zamówienie i potwierdź</h4>
+            <h4 class="text-center mb-10">Potwierdź swoje zamówienie i opłać</h4>
             <div class="card">
                 <h5 class="card-header">Adres rozliczeniowy</h5>
                 <div class="card-body">
-                    <p class="card-text mb-0">{{ order.full_name }}</p>
-                    <p class="card-text mb-0">{{ order.full_address }}</p>
-                    <p class="card-text mb-0">{{ order.city }}, {{ orders.state }}</p>
-                    <p class="card-text mb-0">{{ order.country }}</p>
-                    <p class="card-text mb-0">{{ order.phone }}</p>
-                    <p class="card-text mb-0">{{ order.email }}</p>
+                    <p class="card-text mb-0"><b>Imie i nazwisko: </b>{{ order.full_name }}</p>
+                    <p class="card-text mb-0"><b>Adres: </b>{{ order.full_address }}</p>
+                    <p class="card-text mb-0"><b>Miejscowość i województwo: </b>{{ order.city }}, {{ order.state }}</p>
+                    <p class="card-text mb-0"><b>Kraj: </b>{{ order.country }}</p>
+                    <p class="card-text mb-0"><b>Telefon: </b>{{ order.phone }}</p>
+                    <p class="card-text mb-0"><b>Email: </b>{{ order.email }}</p>
                     {% if order.order_note %}
                         <b>Uwagi do zamówienia:</b>
                         {{ order.order_note }}
+                    {% else %}
+                        <b>Uwagi do zamówienia: brak</b>
                     {% endif %}
                 </div>
             </div>
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="card">
-                <h5 class="card-header">Przejżyj produkty</h5>
+                <h5 class="card-header">Przejrzyj produkty</h5>
                 <div class="card-body">
                     <table class="table table-borderless table-shopping-cart">
                         <thead class="text-muted">

@@ -1,12 +1,10 @@
 @charset "UTF-8";
-/* ==================== GLOBAL STYLES ======================= */
 @import url("https://rsms.me/inter/inter.css");
 html {
   font-family: "Inter", sans-serif;
   font-size: 15px;
 }
 
-/* ================== HELPERS  =================== */
 a:hover {
   text-decoration: none;
 }
@@ -33,7 +31,6 @@ a:hover {
   padding: 2rem 2.3rem;
 }
 
-/* =================  DEFINED VARIABLES =================== */
 .icon-xs, .icon-sm, .icon-md, .icon-lg {
   display: inline-block;
   text-align: center;
@@ -429,7 +426,7 @@ p:last-child {
 
 .navbar-main .nav-link {
   font-weight: 500;
-  color: #1c1c1c;
+  color: #d12222;
 }
 .navbar-main .nav-link:hover {
   color: #666;
@@ -1391,8 +1388,6 @@ a[class*=card]:hover .title {
   min-width: 80px;
 }
 
-/* ================ PAGES HEADER ================== */
-/* ====================== shopping-cart ==================== */
 .table-shopping-cart.table td, .table-shopping-cart.table th {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1405,5 +1400,3 @@ a[class*=card]:hover .title {
   margin-right: 5px;
   display: block;
 }
-
-/*# sourceMappingURL=ui.css.map */

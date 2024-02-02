@@ -48,28 +48,32 @@
             <p>{{ single_product.description }}</p>
 
             <hr>
+            {% if single_product.variation_set.colors %}
               <div class="row">
                 <div class="item-option-select">
                   <h6>Wybierz kolor</h6>
                   <select name="color" class="form-control" required>
-                    <option value="" disabled selected>Kolory</option>
-                    {% for i in single_product.variation_set.colors %}
-                    <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
-                    {% endfor %}
+                    <option value="" disabled selected>Kolory:</option>
+                      {% for i in single_product.variation_set.colors %}
+                      <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
+                      {% endfor %}
                   </select>
                 </div>
               </div>
+              {% endif %}
+              {% if single_product.variation_set.sizes %}
               <div class="row">
                 <div class="item-option-select">
                   <h6>Wybierz rozmiar sadzonki</h6>
                   <select name="size" class="form-control" required>
-                    <option value="" disabled selected>Rozmiary</option>
+                    <option value="" disabled selected>Rozmiary: </option>
                     {% for i in single_product.variation_set.sizes %}
                     <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                     {% endfor %}
                   </select>
                 </div>
               </div>
+              {% endif %}
             <hr>
             
             {% if single_product.stock <= 0 %}

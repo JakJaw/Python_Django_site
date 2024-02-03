@@ -60,7 +60,7 @@
                     <div class="d-flex justify-content-end mb-3 mb-lg-0">
                         {% if user.id is None %}
                         <div class="widget-header">
-                            <small class="title text-muted">Witaj!</small>
+                            <small>Witaj!</small>
                             <div> 
                                 <a href="{% url 'login' %}">Zaloguj</a> <span class="dark-transp"> | </span>
                                 <a href="{% url 'register' %}"> Zarejestruj</a>
@@ -68,7 +68,7 @@
                         </div>
                         {% else %}
                         <div class="widget-header">
-                            <small class="title text-muted">Witaj {{ user.first_name }}!</small>
+                            <small class="title text-primary">Witaj {{ user.first_name }}!</small>
                             <div> 
                                 <a href="{% url 'dashboard' %}">Konto </a> <span class="dark-transp"> | </span>
                                 <a href="{% url 'logout' %}"> Wyloguj</a>

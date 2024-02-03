@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-/* Pół-Gwiazdy */
+/* Rating stars */
 .rate .half:before{
     content: "\f089";
     position: absolute;
@@ -40,6 +40,7 @@ input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:
     color: #ffb500 !important;
 }
 
+/* Thumbnail product picture*/
 ul.thumb{
     margin: 0 auto;
     padding: 0;

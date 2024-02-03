@@ -47,5 +47,5 @@ urlpatterns = i18n_patterns(
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),
     path('orders/', include('orders.urls')),
-    prefix_default_language=True #
+    prefix_default_language=True
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

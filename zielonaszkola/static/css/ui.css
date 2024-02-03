@@ -1,5 +1,16 @@
 @charset "UTF-8";
-@import url("https://rsms.me/inter/inter.css");
+:root {
+  --background: #ffffff;
+  --primary: #3167eb;
+  --footer: rgb(0, 0, 0);
+  --footertext: rgb(219, 177, 60);
+  --normaltext: #000;
+  --greytext: #8b8b8b;
+  --primamrybutton: rgb(46, 71, 209);
+  --secondarylightbutton: rgb(14, 0, 212);
+  --secondarydarkbutton: rgb(4, 0, 61);
+}
+
 html {
   font-family: "Inter", sans-serif;
   font-size: 15px;
@@ -133,11 +144,7 @@ a:hover {
 }
 
 .hover-bg:hover {
-  background: #3167eb;
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
+  background: #94eb31;
   background: linear-gradient(to bottom right, #3167eb, #3167eb);
   transition: 0.5s;
 }
@@ -147,7 +154,6 @@ a:hover {
   transform: scaleX(1);
 }
 
-/* ============== spacing ============== */
 .padding-y {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -217,7 +223,6 @@ article:after,
   content: "";
 }
 
-/* -------------------- small grid gutter --------------------- */
 .row-sm {
   margin-right: -7px;
   margin-left: -7px;
@@ -228,85 +233,6 @@ article:after,
 .row-sm > [class^=col] {
   padding-left: 7px;
   padding-right: 7px;
-}
-
-.bg {
-  background-color: #f8f9fa;
-}
-
-.bg-white {
-  background-color: #fff;
-}
-
-.bg-orange {
-  background-color: #ff9017;
-}
-
-.bg-green {
-  background-color: #00b517;
-}
-
-.bg-blue {
-  background-color: #3167eb;
-}
-
-.bg-red {
-  background-color: #fa3434;
-}
-
-.bg-gradient-blue {
-  background: rgba(33, 37, 41, 0.4);
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgba(49, 103, 235, 0.9), rgba(33, 37, 41, 0.4));
-  /* Standard syntax */
-  transition: 0.5s;
-}
-
-.bg-gradient-green {
-  background: rgba(33, 37, 41, 0.4);
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgba(0, 181, 23, 0.9), rgba(33, 37, 41, 0.4));
-  /* Standard syntax */
-  transition: 0.5s;
-}
-
-.bg-gradient-orange {
-  background: rgba(33, 37, 41, 0.4);
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgba(255, 144, 23, 0.9), rgba(33, 37, 41, 0.4));
-  /* Standard syntax */
-  transition: 0.5s;
-}
-
-.bg-gradient-red {
-  background: rgba(33, 37, 41, 0.4);
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgba(250, 52, 52, 0.9), rgba(33, 37, 41, 0.4));
-  /* Standard syntax */
-  transition: 0.5s;
-}
-
-.bg-gradient-pink {
-  background: rgba(33, 37, 41, 0.4);
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgba(232, 62, 140, 0.9), rgba(33, 37, 41, 0.4));
-  /* Standard syntax */
-  transition: 0.5s;
 }
 
 .bg-pattern {
@@ -327,29 +253,11 @@ article:after,
 .overlay-gradient {
   position: relative;
 }
-.overlay-gradient:before {
-  position: absolute;
-  content: "";
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.6;
-  transition: 0.5s;
-  background: aqua;
-  /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #3167eb, aqua);
-  /* Standard syntax */
-}
+
 .overlay-gradient:hover:before {
   opacity: 0.9;
 }
 
-/* --------------------- titles ---------------------- */
 .section-heading {
   margin-bottom: 20px;
   margin-top: 15px;
@@ -363,7 +271,7 @@ article:after,
   margin-top: 30px;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #212529;
+  color: var(--primary);
 }
 
 .title-page {
@@ -378,23 +286,10 @@ article:after,
   font-weight: 600;
 }
 
-.white {
-  color: #fff;
-}
-
-.dark {
-  color: #212529;
-}
-
-.black {
-  color: #000;
-}
-
 p:last-child {
   margin-bottom: 0;
 }
 
-/* ==================  title helpers ================ */
 .rtl {
   direction: rtl;
 }
@@ -403,13 +298,11 @@ p:last-child {
   direction: ltr;
 }
 
-/* ================== SECTIONS =================== */
-/* ================== header main ==================  */
 .header-top-light .nav-link {
-  color: #969696;
+  color: #000000;
 }
 .header-top-light .nav-link:hover {
-  color: #212529;
+  color: #575757;
 }
 
 .header-main {
@@ -428,24 +321,25 @@ p:last-child {
   font-weight: 500;
   color: #1c1c1c;
 }
+
 .navbar-main .nav-link:hover {
   color: #666;
 }
-
+/* ================ widget header ==================  */
+/* widget header dashboard/logout/login */
 .widget-header {
   display: inline-block;
   vertical-align: middle;
   position: relative;
 }
+
 .widget-header a {
-  color: #343a40;
+  color: var(--normaltext);
 }
 .widget-header a:hover {
-  color: #3167eb;
+  color: var(--secondarylightbutton);
 }
-.widget-header i {
-  color: #969696;
-}
+
 .widget-header form {
   min-width: 280px;
 }
@@ -457,13 +351,29 @@ p:last-child {
   top: -3px;
   right: -10px;
 }
+
+.widget-header i {
+  color: var(--primamrybutton);
+}
 .widget-header:hover i {
-  color: #3167eb;
+  color: var(--secondarydarkbutton);
 }
 
 /* desktop only */
-/* desktop only .end */
-/* ================ SECTION-FOOTER ==================  */
+/* ================ Section footer ==================  */
+.section-footer{
+  background-color: var(--footer);
+  color: var(--footertext);
+}
+.section-footer span{
+  color: var(--footertext);
+}
+.section-footer.border-top{
+  background-color: #000;
+}
+.section-footer p{
+  color: var(--footertext);
+}
 .section-footer ul li {
   margin-bottom: 5px;
 }
@@ -471,7 +381,7 @@ p:last-child {
   color: inherit;
 }
 .section-footer ul a:hover {
-  color: #3167eb;
+  color: var(--primary);
 }
 .section-footer .logo-footer {
   height: 40px;
@@ -479,7 +389,7 @@ p:last-child {
 .section-footer .title {
   font-weight: 600;
   margin-bottom: 16px;
-  color: #212529;
+  color: #292121;
 }
 
 .footer-bottom {
@@ -492,32 +402,9 @@ p:last-child {
   padding-bottom: 20px;
 }
 
-/* ================== COMPONENTS =================== */
-/* ================ OWL SLIDER BANNER ================ */
-.slider-banner-owl .owl-nav .owl-prev, .slider-banner-owl .owl-nav .owl-next {
-  padding: 16px 7px;
-  color: #FFF;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  z-index: 9;
-  position: absolute;
-}
-.slider-banner-owl .owl-nav .owl-prev {
-  left: 0;
-}
-.slider-banner-owl .owl-nav .owl-next {
-  right: 0;
-}
-.slider-banner-owl .item-slide img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .slider-banner-slick .slick-prev, .slider-banner-slick .slick-next {
   padding: 18px 7px;
-  color: #FFF;
+  color: #e01c1c;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
@@ -538,46 +425,6 @@ p:last-child {
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.btn-facebook {
-  background-color: #405D9D;
-  color: #fff;
-}
-.btn-facebook:hover {
-  color: #fff;
-}
-
-.btn-instagram {
-  background-color: #E52D27;
-  color: #fff;
-}
-.btn-instagram:hover {
-  color: #fff;
-}
-
-.btn-youtube {
-  background-color: #C8046C;
-  color: #fff;
-}
-.btn-youtube:hover {
-  color: #fff;
-}
-
-.btn-twitter {
-  background-color: #42AEEC;
-  color: #fff;
-}
-.btn-twitter:hover {
-  color: #fff;
-}
-
-.btn-google {
-  background-color: #ff7575;
-  color: #fff;
-}
-.btn-google:hover {
-  color: #fff;
 }
 
 .btn-icon {
@@ -657,7 +504,7 @@ a.itemside {
   vertical-align: middle;
 }
 
-/* --------- description list --------*/
+/* --------- description --------*/
 dl[class=row] {
   margin-bottom: 0;
 }
@@ -683,8 +530,6 @@ dl[class=row] {
 .dlist-align dd {
   flex-grow: 1;
 }
-
-/* -------------------- list.row--------------------- */
 ul.row, ul.row-sm {
   list-style: none;
   padding: 0;
@@ -817,13 +662,13 @@ a[class*=card]:hover .title {
   color: #3167eb;
 }
 
-/* BASE STYLE FOR PRODUCT ITEM */
+/* PRODUCT ITEM */
 [class*=card-product] a.title {
-  color: #212529;
+  color: var(--normaltext);
   display: block;
 }
 [class*=card-product] a.title:hover {
-  color: #3167eb;
+  color: var(--primamrybutton);
 }
 [class*=card-product] .badge {
   top: 10px;
@@ -900,12 +745,11 @@ a[class*=card]:hover .title {
   box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
   transition: 0.3s;
 }
-
 .item-slide .card-product-grid {
   margin-bottom: 0;
 }
 
-/* LARGE LIST STYLE PRODUCT ITEM */
+/* large list products */
 .card-product-list {
   margin-bottom: 20px;
 }
@@ -1051,7 +895,7 @@ a[class*=card]:hover .title {
 
 .price {
   font-weight: 600;
-  color: #212529;
+  color: var(--normaltext);
 }
 
 .price-old {
@@ -1069,6 +913,7 @@ a[class*=card]:hover .title {
 .card-header .title {
   margin-bottom: 0;
   line-height: 1.5;
+  background: var(--background);
 }
 
 .filter-group {
@@ -1092,7 +937,7 @@ a[class*=card]:hover .title {
   max-width: 100%;
 }
 
-/* ================= RATINGS ============== */
+/* ================= ratings ============== */
 .label-rating {
   margin-left: 7px;
   display: inline-block;
@@ -1332,18 +1177,15 @@ a[class*=card]:hover .title {
   padding-bottom: 5px;
 }
 
-/* ================== Strony =================== */
-/* ================ Nagłówki ================== */
 .section-pagetop {
   padding: 45px 0;
 }
-
-/* ================== PAGE DETAILS ==================  */
+/* gallery */
 .gallery-wrap .img-big-wrap {
   margin-bottom: 10px;
   border-radius: 0.37rem;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--background);  
 }
 .gallery-wrap .img-big-wrap a {
   text-align: center;
@@ -1399,4 +1241,9 @@ a[class*=card]:hover .title {
   font-weight: bold;
   margin-right: 5px;
   display: block;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }

@@ -28,8 +28,8 @@
                                     <li><strong>Dane kupującego</strong></li>
                                     <li>{{ order.full_name }}</li>
                                     <li>{{ order.full_address }}</li>
-                                    <li>{{ order.city }}, {{ order.state }}</li>
-                                    <li>{{ order.country }}</li>
+                                    <li>{{ order.city|title  }}, {{ order.state|title  }}</li>
+                                    <li>{{ order.country|title  }}</li>
                                 </ul>
                             </div>
                         </div>

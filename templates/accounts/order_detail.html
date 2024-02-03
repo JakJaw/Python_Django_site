@@ -17,9 +17,9 @@
                             <div class="invoice-from">
                                 <ul class="list-unstyled text-right">
                                     <li><strong>Dane kupującego</strong></li>
-                                    <li>{{ order.full_name }}</li>
-                                    <li>{{ order.full_address }}</li>
-                                    <li>{{ order.city }}, {{ orders.state }}, {{ order.country }}</li>
+                                    <li>{{ order.full_name|title }}</li>
+                                    <li>{{ order.full_address|title }}</li>
+                                    <li>{{ order.city|title }}, {{ order.state|title }}, {{ order.country|title }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                     <ul class="list-unstyled mb0">
                                         <li><strong>Numer zamówienia: </strong>{{ order.order_number }}</li>
                                         <li><strong>Numer transakcji: </strong>{{ order.payment.payment_id }}</li>
-                                        <li><strong>Data zamówienia: </strong>{{ order.created_at|date:"Y/n/j G:i" }}</li>
+                                        <li><strong>Data zamówienia: </strong>{{ order.created_at|date:"d.m.o G:i" }}</li>
                                         <li><strong>Status zamówienia: </strong>{{ order.payment.status }}</li>
                                     </ul>
                                 </div>

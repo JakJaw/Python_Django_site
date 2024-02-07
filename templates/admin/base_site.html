@@ -6,15 +6,15 @@
 {% load i18n_switcher %}
  
 {% block extrahead %}
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+    <link rel="shortcut icon" href="{% static 'images/favicons/favicon.ico' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/custom_admin.css' %}"/>
 {% endblock %}
  
 {% block userlinks %}
-    / <a href="{{ request|switch_i18n:'pl' }}"><img class="i18n_flag" src="{% static 'images/PL_flag.png' %}"  width="15" height="10"/></a>
-    <a href="{{ request|switch_i18n:'en' }}"><img class="i18n_flag" src="{% static 'images/EN_flag.png' %}"  width="15" height="10"/></a>
-    <a href="{{ request|switch_i18n:'es' }}"><img class="i18n_flag" src="{% static 'images/ES_flag.png' %}"  width="15" height="10"/></a>
-    <a href="{{ request|switch_i18n:'de' }}"><img class="i18n_flag" src="{% static 'images/DE_flag.png' %}"  width="15" height="10"/></a> /
+    / <a href="{{ request|switch_i18n:'pl' }}"><img class="i18n_flag" src="{% static 'images/flags/PL_flag.png' %}"  width="15" height="10"/></a>
+    <a href="{{ request|switch_i18n:'en' }}"><img class="i18n_flag" src="{% static 'images/flags/EN_flag.png' %}"  width="15" height="10"/></a>
+    <a href="{{ request|switch_i18n:'es' }}"><img class="i18n_flag" src="{% static 'images/flags/ES_flag.png' %}"  width="15" height="10"/></a>
+    <a href="{{ request|switch_i18n:'de' }}"><img class="i18n_flag" src="{% static 'images/flags/DE_flag.png' %}"  width="15" height="10"/></a> /
     {% if user.is_active and user.is_staff %}
         {% url 'django-admindocs-docroot' as docsroot %}
         {% if docsroot %}

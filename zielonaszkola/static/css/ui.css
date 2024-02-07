@@ -4,8 +4,8 @@
   --primary: #3167eb;
   --footer: rgb(0, 0, 0);
   --footertext: rgb(219, 177, 60);
-  --normaltext: #000;
-  --greytext: #8b8b8b;
+  --normaltext: #4c102a;
+  --greytext: #4c102a;
   --primamrybutton: rgb(46, 71, 209);
   --secondarylightbutton: rgb(14, 0, 212);
   --secondarydarkbutton: rgb(4, 0, 61);
@@ -235,21 +235,6 @@ article:after,
   padding-right: 7px;
 }
 
-.bg-pattern {
-  background-image: url(../images/banners/bg-pattern.svg), linear-gradient(135deg, #3167eb, #545454);
-  background-size: cover, auto;
-  background-repeat: no-repeat, repeat;
-  background-position: 0px 0px, 50% 50%;
-}
-
-.bg-img {
-  overflow: hidden;
-  background-color: #ddd;
-  background-image: linear-gradient(135deg, rgba(49, 103, 235, 0.8), rgba(84, 84, 84, 0.9)), url("../images/banners/bg-cpu.jpg");
-  background-position: 0px 0px, 50% 50%;
-  background-size: auto cover;
-}
-
 .overlay-gradient {
   position: relative;
 }
@@ -264,7 +249,7 @@ article:after,
 }
 
 .section-title {
-  color: #212529;
+  color: var(--normaltext);
 }
 
 .title-text {
@@ -275,7 +260,7 @@ article:after,
 }
 
 .title-page {
-  color: #212529;
+  color: var(--normaltext);
 }
 
 .text-lg {
@@ -299,10 +284,10 @@ p:last-child {
 }
 
 .header-top-light .nav-link {
-  color: #000000;
+  color:var(--normaltext);
 }
 .header-top-light .nav-link:hover {
-  color: #575757;
+  color: var(--normaltext);
 }
 
 .header-main {
@@ -319,12 +304,13 @@ p:last-child {
 
 .navbar-main .nav-link {
   font-weight: 500;
-  color: #1c1c1c;
+  color: var(--normaltext);
 }
 
 .navbar-main .nav-link:hover {
-  color: #666;
+  color: var(--normaltext);
 }
+
 /* ================ widget header ==================  */
 /* widget header dashboard/logout/login */
 .widget-header {
@@ -353,26 +339,26 @@ p:last-child {
 }
 
 .widget-header i {
-  color: var(--primamrybutton);
+  color: var(--normaltext);
 }
 .widget-header:hover i {
-  color: var(--secondarydarkbutton);
+  color: var(--primamrybutton);
 }
 
 /* desktop only */
 /* ================ Section footer ==================  */
 .section-footer{
   background-color: var(--footer);
-  color: var(--footertext);
+  color: var(--background);
 }
 .section-footer span{
-  color: var(--footertext);
+  color: var(--background);
 }
 .section-footer.border-top{
-  background-color: #000;
+  background-color: var(--normaltext);
 }
 .section-footer p{
-  color: var(--footertext);
+  color: var(--background);
 }
 .section-footer ul li {
   margin-bottom: 5px;
@@ -381,7 +367,7 @@ p:last-child {
   color: inherit;
 }
 .section-footer ul a:hover {
-  color: var(--primary);
+  color: var(--background);
 }
 .section-footer .logo-footer {
   height: 40px;
@@ -662,7 +648,7 @@ a[class*=card]:hover .title {
   color: #3167eb;
 }
 
-/* PRODUCT ITEM */
+/* products */
 [class*=card-product] a.title {
   color: var(--normaltext);
   display: block;
@@ -679,19 +665,19 @@ a[class*=card]:hover .title {
   margin-bottom: 0;
 }
 [class*=card-product] .img-wrap {
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
+/* product image grid */
 [class*=card-product] .img-wrap img {
+  width: 100%;
   height: 100%;
-  max-width: 100%;
-  width: auto;
   display: inline-block;
-  -o-object-fit: cover;
-     object-fit: cover;
+    object-fit: cover;
 }
 
-/* GRID STYLE PRODUCT ITEM */
+/* grid */
 .card-product-grid {
   margin-bottom: 20px;
 }
@@ -778,7 +764,7 @@ a[class*=card]:hover .title {
   display: flex;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--background);
   background-size: cover;
   background-position: center center;
   border-radius: 0.37rem;
@@ -1180,21 +1166,24 @@ a[class*=card]:hover .title {
 .section-pagetop {
   padding: 45px 0;
 }
+
 /* gallery */
 .gallery-wrap .img-big-wrap {
   margin-bottom: 10px;
   border-radius: 0.37rem;
   overflow: hidden;
-  background-color: var(--background);  
+  background-color: var(--background);
 }
 .gallery-wrap .img-big-wrap a {
   text-align: center;
   display: block;
+  width: 100%;
 }
 .gallery-wrap .img-big-wrap img {
   height: 450px;
   width: auto;
   display: inline-block;
+  width: 100%;
 }
 .gallery-wrap .thumbs-wrap {
   text-align: center;

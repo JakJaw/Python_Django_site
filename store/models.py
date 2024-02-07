@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 class Product(models.Model):
     product_name = models.CharField(max_length=200, unique=True, verbose_name=_('Product name'))
     slug = models.SlugField(max_length=200, unique=True, verbose_name=_('Slug'))
-    description = models.TextField(max_length=200, blank=True, verbose_name=_('Describtion'))
+    description = models.TextField(max_length=600, blank=True, verbose_name=_('Describtion'))
     price = models.FloatField(verbose_name=_('Price'))
     image = models.ImageField(upload_to='photos/products', verbose_name=_('Image'))
     stock = models.IntegerField(verbose_name=_('Stock'))
@@ -44,16 +44,16 @@ class Product(models.Model):
 
 
 class VariationManager(models.Manager):
-    def colors(self):
-        return super(VariationManager, self).filter(variation_category='color', is_active=True)
+    def kolory(self):
+        return super(VariationManager, self).filter(variation_category='kolor', is_active=True) #colors
     
-    def sizes(self):
-        return super(VariationManager, self).filter(variation_category='size', is_active=True)
+    def rozmiary(self):
+        return super(VariationManager, self).filter(variation_category='rozmiar', is_active=True) #sizes
 
 
 variation_category_choice = (
-    ('color', 'color'),
-    ('size', 'size'),
+    ('kolor', 'kolor'), #color
+    ('rozmiar', 'rozmiar'), #size
 )
 
 class Variation(models.Model):

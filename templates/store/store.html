@@ -7,9 +7,9 @@
 <section class="section-pagetop bg">
     <div class="container">
         {% if 'search' in request.path %}
-        <h2 class="title-page">Wynik szukania</h2>
+        <h2 class="title-page">Wynik szukania <i class="fa fa-search"></i></h2>
         {% else %}
-        <h2 class="title-page">Nasz sklep</h2>
+        <h2 class="title-page">Nasz sklep <i class="fa fa-shopping-basket"></i></i></h2>
         {% endif %}
     </div>
 </section>
@@ -23,7 +23,7 @@
                         <header class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
                                 <i class="icon-control fa fa-chevron-down"></i>
-                                <h6 class="title">Kategorie</h6>
+                                <h6 class="title"><i class="fa fa-filter"></i> Kategorie</h6>
                             </a>
                         </header>
                         <div class="filter-content collapse show" id="collapse_1" style="">
@@ -42,41 +42,15 @@
                         <header class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
                                 <i class="icon-control fa fa-chevron-down"></i>
-                                <h6 class="title">Price range </h6>
+                                <h6 class="title"><i class="fa fa-filter"></i> Filtruj </h6>
                             </a>
                         </header>
                         <div class="filter-content collapse show" id="collapse_3" style="">
                             <div class="card-body">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                    <label>od</label>
-                                    <!-- <input class="form-control" placeholder="0 zł" type="number"> -->
-                                        <select class="mr-2 form-control">
-                                            <option value="0">0 zł</option>
-                                            <option value="5">5 zł</option>
-                                            <option value="10">10 zł</option>
-                                            <option value="20">20 zł</option>
-                                            <option value="50">50 zł</option>
-                                            <option value="80">80 zł</option>
-                                            <option value="100">100 zł</option>
-                                            <option value="1000">1000 zł</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group text-right col-md-6">
-                                    <label>do</label>
-                                        <select class="mr-2 form-control">
-                                            <option value="0">0 zł</option>
-                                            <option value="5">5 zł</option>
-                                            <option value="10">10 zł</option>
-                                            <option value="20">20 zł</option>
-                                            <option value="50">50 zł</option>
-                                            <option value="80">80 zł</option>
-                                            <option value="100">100 zł</option>
-                                            <option value="1000">1000 zł</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <button class="btn btn-block btn-primary">Filtruj</button>
+                                <a href="{% url 'filter_products' filter='asce' filter_type='num' %}" class="btn btn-block btn-primary">Od najniższej ceny</a>
+                                <a href="{% url 'filter_products' filter='desc' filter_type='num' %}" class="btn btn-block btn-primary">Od najwyższej ceny</a>
+                                <a href="{% url 'filter_products' filter='desc' filter_type='name' %}" class="btn btn-block btn-primary">Produkty od A do Z</a>
+                                <a href="{% url 'filter_products' filter='asce' filter_type='name' %}" class="btn btn-block btn-primary">Produkty od Z do A</a>
                             </div>
                         </div>
                     </article>

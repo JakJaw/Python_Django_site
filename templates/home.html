@@ -16,7 +16,7 @@
 	<div class="container">
 		<header class="section-heading">
 			<a href="{% url 'store' %}" class="btn btn-outline-primary float-right">Sprawdź je wszystkie</a>
-			<h3 class="section-title">Nasze najpopularniejsze produkty</h3>
+			<h3 class="section-title">Nasze najpopularniejsze produkty <i class="fa fa-fire" style="color:Tomato;"></i> </h3>
 		</header>
 		<div class="row">
 			{% for product in products %}
@@ -25,7 +25,7 @@
 					<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.image.url }}"> </a>
 					<figcaption class="info-wrap">
 						<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
-						<div class="price mt-1">{{ product.price }} zł</div>
+						<div class="price mt-1">{{ product.price|floatformat:2 }} zł</div>
 						<div class="rating-star">
 							<span>  
 							  <i class="fa fa-star{% if product.averageRating < 0.5 %}-o{% elif product.averageRating >= 0.5 and product.averageRating < 1 %}-half-o {% endif %}" aria-hidden="true"></i>

@@ -4,10 +4,11 @@
 {% block content %}
 
 <section class="section-content padding-y bg">
+    <h4 class="text-center mb-10">Potwierdź swoje zamówienie i opłać dowolną metodą</h4>
     <div class="container">
         <div class="row">
         <aside class="col-lg-8">
-            <h4 class="text-center mb-10">Potwierdź swoje zamówienie i opłać</h4>
+
             <div class="card">
                 <h5 class="card-header">Adres rozliczeniowy</h5>
                 <div class="card-body">
@@ -66,7 +67,7 @@
                                 <td> 
                                     <div class="price-wrap"> 
                                         <var class="price">{{ cart_item.sub_total }} zł</var> 
-                                        <small class="text-muted">{{ cart_item.product.price }} zł każdy</small> 
+                                        <small class="text-muted">{{ cart_item.product.price }} zł szt.</small> 
                                     </div>
                                 </td>
                             </tr>
@@ -82,19 +83,21 @@
                 <div class="card-body">
                     <dl class="dlist-align">
                     <dt>Cena:</dt>
-                    <dd class="text-right">{{ total }} zł</dd>
+                    <dd class="text-right">{{ total|floatformat:2 }} zł</dd>
                     </dl>
                     <dl class="dlist-align">
                     <dt>Podatek:</dt>
-                    <dd class="text-right">{{ tax }} zł</dd>
+                    <dd class="text-right">{{ tax|floatformat:2 }} zł</dd>
                     </dl>
                     <dl class="dlist-align">
                     <dt>Cena końcowa:</dt>
-                    <dd class="text-right text-dark b"><strong>{{ grand_total }} zł</strong></dd>
+                    <dd class="text-right text-dark b"><strong>{{ grand_total|floatformat:2 }} zł</strong></dd>
                     </dl>
                     <hr>
                     <p class="text-center mb-3">
-                        <img src="{% static './images/misc/payments.png' %}" height="26">
+                        <i class="fab fa-lg fa-cc-visa" ></i>
+					    <i class="fab fa-lg fa-cc-paypal"></i>
+					    <i class="fa fa-lg fa-credit-card"></i>
                     </p>
                     <div id="paypal-button-container">
                         <!-- Integracja PayPal -->

@@ -4,6 +4,24 @@
 Dzień dobry {{ user.first_name }},
 
 Odebraliśmy zamówienie Numer: {{ order.order_number }}
+Link do zamówienia: http://{{ current_site }}{% url 'order_detail' order_id=order.order_number %}
+Informujemy, że zakupione przez Ciebie towary zostały spakowane i czekają na kuriera.
 
+Dostawa pod adres:
+{{ order.address_line_1 }} {{ order.address_line_2 }}
+{{ order.city }}, {{ order.state }}, {{ order.country }}
+{{ order.full_name }}
+{{ order.phone }}
+
+Jeśli będziesz zadowolony z jakości naszych usług, zostaw po sobie miły ślad w postaci pozytywnego komentarza ocenionego na pięć żółtych gwiazdek.
+Jeżeli z jakiegoś powodu będziesz niezadowolony z zakupu lub uważasz, że nie zasłużyliśmy na pięć gwiazdek, nie oceniaj nas od razu negatywnie, najpierw skontaktuj się z nami.
+Natychmiast dołożymy wszelkich starań aby rozwiązać problem. Dzięki zgłoszeniu będziemy mogli stale się rozwijać i poprawiać jakość naszej obsługi.
+
+
+Zapraszamy do ponownych zakupów. 
+ZielonaSzkółka Jakub Jaworski
+43-100 Tychy
+Mysłowicka 631
+Nip: 0009998881
 
 {% endautoescape %}

@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+import collections
 
 from store.models import Product, Variation
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 
 def _cart_id(request):
     cart = request.session.session_key
@@ -16,9 +16,9 @@ def _cart_id(request):
 
 def add_cart(request, product_id):
     current_user = request.user
-    product = Product.objects.get(id=product_id) #getting the product
+    product = Product.objects.get(id=product_id) #get the Product
     
-    #Jeśli użytkownik jest zalogowany
+    #If user is logged
     if current_user.is_authenticated:
         product_variation = []
         if request.method == 'POST':
@@ -31,17 +31,27 @@ def add_cart(request, product_id):
                     product_variation.append(variation)
                 except:
                     pass
-
+                
         is_cart_item_exists = CartItem.objects.filter(product=product, user=current_user).exists()
-        if is_cart_item_exists:        
+        
+        
+        if is_cart_item_exists:
             cart_item = CartItem.objects.filter(product=product, user=current_user)
             ex_var_list = []
             id = []
+            
             for item in cart_item:
                 existing_variation = item.variations.all()
                 ex_var_list.append(list(existing_variation))
                 id.append(item.id)
-                
+
+            #Beware when adding more variations because args in ex_var_list are unordered
+            #print(product_variation,'\n' ,*ex_var_list, '\n', ex_var_list, '\n')
+            #for x in ex_var_list:
+            #    if collections.Counter(product_variation) == collections.Counter(x):
+            #        print('yes')
+            #   else:
+            #       print('no')
             if product_variation in ex_var_list:
                 index = ex_var_list.index(product_variation)
                 item_id = id[index]
@@ -55,6 +65,7 @@ def add_cart(request, product_id):
                     item.variations.clear()
                     item.variations.add(*product_variation)
                 item.save()
+
         else:
             cart_item = CartItem.objects.create(
                 product = product,
@@ -67,7 +78,7 @@ def add_cart(request, product_id):
             cart_item.save()
         return redirect('cart')
 
-    #Jeśli użytkownik jest zalogowany
+    #If user is not logged
     else:
         product_variation = []
         if request.method == 'POST':

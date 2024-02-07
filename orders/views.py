@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.http import HttpResponse, JsonResponse #Manual quick testing
 from carts.models import CartItem
@@ -53,10 +54,12 @@ def payments(request):
         
     CartItem.objects.filter(user=request.user).delete()
     
+    current_site = get_current_site(request)
     mail_subject = 'Dziękujemy za złożenie zamówienia'
     mail_message = render_to_string('orders/order_received_email.html', {
         'user': request.user,
         'order': order,
+        'current_site': current_site,
         })
     
     email_destination = request.user.email
@@ -143,6 +146,7 @@ def order_complete(request):
             subtotal += i.product_price * i.quantity
                 
         payment = Payment.objects.get(payment_id=transID)
+
         
         context = {
             'order': order,

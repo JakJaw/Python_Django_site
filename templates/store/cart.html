@@ -19,33 +19,32 @@
                     <table class="table table-borderless table-shopping-cart">
                         <thead class="text-muted">
                             <tr class="small text-uppercase">
-                                <th scope="col">Product</th>
-                                <th scope="col" width="120">Quantity</th>
-                                <th scope="col" width="120">Price</th>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" width="120">Liczba</th>
+                                <th scope="col" width="120">Cena</th>
                                 <th scope="col" class="text-right" width="200"> </th>
                             </tr>
                         </thead>
                     <tbody>
-    
-    {% for cart_item in cart_items %}
-    <tr>
-        <td>
-            <figure class="itemside align-items-center">
-                <div class="aside"><img src="{{ cart_item.product.image.url }}" class="img-sm"></div>
-                    <figcaption class="info">
-                        <a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
-                        <p class="text-muted small">
-                            {% if cart_item.variations.all %}
-                                {% for item in cart_item.variations.all %}
-                                    {{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
-                                {% endfor %}
-                            {% endif %}
-                        </p>
-                    </figcaption>
-                </div>
-            </figure>
-        </td>
-        <td> 
+                    {% for cart_item in cart_items %}
+                    <tr>
+                        <td>
+                            <figure class="itemside align-items-center">
+                                <div class="aside"><img src="{{ cart_item.product.image.url }}" class="img-sm"></div>
+                                    <figcaption class="info">
+                                        <a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
+                                        <p class="text-muted small">
+                                            {% if cart_item.variations.all %}
+                                                {% for item in cart_item.variations.all %}
+                                                    {{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </p>
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        </td>
+                        <td> 
                         <div class="col"> 
                             <div class="input-group input-spinner">
                                 <div class="input-group-prepend">
@@ -66,8 +65,8 @@
         </td>
         <td> 
             <div class="price-wrap"> 
-                <var class="price">{{ cart_item.sub_total }} zł</var> 
-                <small class="text-muted">{{ cart_item.product.price }} zł każdy</small> 
+                <var class="price">{{ cart_item.sub_total|floatformat:2 }} zł</var> 
+                <small class="text-muted">{{ cart_item.product.price|floatformat:2 }} zł szt.</small> 
             </div>
         </td>
         <td class="text-right"> 
@@ -85,19 +84,21 @@
                 <div class="card-body">
                     <dl class="dlist-align">
                     <dt>Suma cen:</dt>
-                    <dd class="text-right">{{ total }} zł</dd>
+                    <dd class="text-right">{{ total|floatformat:2 }} zł</dd>
                     </dl>
                     <dl class="dlist-align">
                     <dt>Podatek:</dt>
-                    <dd class="text-right">{{ tax }} zł</dd>
+                    <dd class="text-right">{{ tax|floatformat:2 }} zł</dd>
                     </dl>
                     <dl class="dlist-align">
                     <dt>Suma:</dt>
-                    <dd class="text-right text-dark b"><strong>{{ grand_total }} zł</strong></dd>
+                    <dd class="text-right text-dark b"><strong>{{ grand_total|floatformat:2 }} zł</strong></dd>
                     </dl>
                     <hr>
                     <p class="text-center mb-3">
-                        <img src="{% static './images/misc/payments.png' %}" height="26">
+                        <i class="fab fa-lg fa-cc-visa" ></i>
+					    <i class="fab fa-lg fa-cc-paypal"></i>
+					    <i class="fa fa-lg fa-credit-card"></i>
                     </p>
                     <a href="{% url "checkout" %}" class="btn btn-primary btn-block"> Przejdź do podsumowania </a>
                     <a href="{% url 'store' %}" class="btn btn-light btn-block">Kontynuuj zakupy</a>

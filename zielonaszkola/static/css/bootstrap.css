@@ -6,11 +6,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --background: #ffffff;
+  --background: #fff7e2;
   --primary: #3167eb;
   --footer: rgb(0, 0, 0);
   --footertext: rgb(219, 177, 60);
-  --normaltext: #000;
+  --normaltext: #4c102a;
+  --buttondark: #761941;
   --greytext: #8b8b8b;
   --primamrybutton: rgb(46, 71, 209);
   --secondarylightbutton: rgb(14, 0, 212);
@@ -77,10 +78,10 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #343a40;
+  color: var(--normaltext);
   text-align: left;
   margin-bottom: 56px;
-  background-color: #fff;
+  background-color: #fff7e2;
 }
 
 [tabindex="-1"]:focus {
@@ -2408,27 +2409,27 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #3167eb;
-  border-color: #3167eb;
+  color: var(--background);
+  background-color: var(--buttondark);
+  border-color: var(--normaltext);
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #1650e0;
-  border-color: #154cd4;
+  color: var(--normaltext);
+  background-color: var(--background);
+  border-color: var(--buttondark);
 }
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(80, 126, 238, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
-  color: #fff;
-  background-color: #3167eb;
-  border-color: #3167eb;
+  color: var(--white);
+  background-color: var(--buttondark);
+  border-color: var(--normaltext);
 }
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #154cd4;
-  border-color: #1348c9;
+  color: var(--white);
+  background-color: var(--buttondark);
+  border-color: var(--normaltext);
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(80, 126, 238, 0.5);
@@ -2705,13 +2706,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #3167eb;
-  border-color: #3167eb;
+  color: var(--normaltext);
+  border-color: var(--normaltext);
 }
 .btn-outline-primary:hover {
-  color: #fff;
-  background-color: #3167eb;
-  border-color: #3167eb;
+  color: var(--background);
+  background-color: var(--buttondark);
+  border-color: var(--buttondark);
 }
 .btn-outline-primary:focus, .btn-outline-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(49, 103, 235, 0.5);
@@ -4373,7 +4374,7 @@ input[type=button].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--buttondark);
   border-radius: 0.37rem;
 }
 .card > hr {
@@ -4625,9 +4626,9 @@ input[type=button].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #3167eb;
+  color: var(--normaltext);
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--normaltext);
 }
 .page-link:hover {
   z-index: 2;
@@ -4653,9 +4654,9 @@ input[type=button].btn-block {
 }
 .page-item.active .page-link {
   z-index: 1;
-  color: #fff;
-  background-color: #3167eb;
-  border-color: #3167eb;
+  color: var(--white);
+  background-color: var(--normaltext);
+  border-color: var(--normaltext);
 }
 .page-item.disabled .page-link {
   color: #545454;
@@ -5159,12 +5160,12 @@ a.badge-gray-light:focus, a.badge-gray-light.focus {
 .list-group-item.disabled, .list-group-item:disabled {
   color: #545454;
   pointer-events: none;
-  background-color: #fff;
+  background-color: var(--buttondark);
 }
 .list-group-item.active {
   z-index: 2;
-  color: #fff;
-  background-color: #3167eb;
+  color: var(--white);
+  background-color: var(--buttondark);
   border-color: #3167eb;
 }
 
@@ -6328,7 +6329,7 @@ button.bg-gray-light:focus {
 }
 
 .border {
-  border: 1px solid #e4e4e4 !important;
+  border: 1px solid var(--normaltext) !important;
 }
 
 .border-top {
@@ -6336,15 +6337,15 @@ button.bg-gray-light:focus {
 }
 
 .border-right {
-  border-right: 1px solid #e4e4e4 !important;
+  border-right: 1px solid !important;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #e4e4e4 !important;
+  border-bottom: 1px solid var(--gray-light) !important;
 }
 
 .border-left {
-  border-left: 1px solid #e4e4e4 !important;
+  border-left: 1px solid var(--buttondark) !important;
 }
 
 .border-0 {
@@ -6449,6 +6450,7 @@ button.bg-gray-light:focus {
 
 .rounded-circle {
   border-radius: 50% !important;
+
 }
 
 .rounded-pill {
@@ -9948,7 +9950,7 @@ button.bg-gray-light:focus {
 }
 
 .text-primary {
-  color: #3167eb !important;
+  color: var(--normaltext) !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -10044,7 +10046,7 @@ a.text-gray-light:hover, a.text-gray-light:focus {
 }
 
 .text-footerlight {
-  color: var(--footertext) !important;
+  color: var(--white) !important;
 }
 
 .text-black-50 {

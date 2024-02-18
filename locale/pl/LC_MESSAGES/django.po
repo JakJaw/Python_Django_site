@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 17:09+0100\n"
+"POT-Creation-Date: 2024-02-18 17:02+0100\n"
 "Last-Translator: Jakub Jaworski <jakjaw01@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Profile Picture"
 msgstr "Zdjęcie profilowe"
 
-#: .\accounts\apps.py:8 .\accounts\models.py:66
+#: .\accounts\apps.py:8 .\accounts\models.py:65
 msgid "Accounts"
 msgstr "Konta Użytkowników"
 
@@ -30,88 +30,88 @@ msgstr "Konta Użytkowników"
 msgid "Only image fields"
 msgstr "Tylko pliki graficzne"
 
-#: .\accounts\models.py:45 .\orders\models.py:34
+#: .\accounts\models.py:44 .\orders\models.py:34
 msgid "First name"
 msgstr "Imię"
 
-#: .\accounts\models.py:46 .\orders\models.py:35
+#: .\accounts\models.py:45 .\orders\models.py:35
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: .\accounts\models.py:47
+#: .\accounts\models.py:46
 msgid "Username"
 msgstr "Nazwa konta"
 
-#: .\accounts\models.py:48 .\orders\models.py:37
+#: .\accounts\models.py:47 .\orders\models.py:37
 msgid "Email"
 msgstr "Email"
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:48
 msgid "Phone number"
 msgstr "Numer telefonu"
 
-#: .\accounts\models.py:52
+#: .\accounts\models.py:51
 msgid "Date joined"
 msgstr "Data dołączenia"
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:52
 msgid "Last login"
 msgstr "Ostatnie logowanie"
 
-#: .\accounts\models.py:54
+#: .\accounts\models.py:53
 msgid "Is admin"
 msgstr "Jest adminem"
 
-#: .\accounts\models.py:55
+#: .\accounts\models.py:54
 msgid "Is staff"
 msgstr "Jest pracownikiem"
 
-#: .\accounts\models.py:56 .\carts\models.py:24 .\store\models.py:63
+#: .\accounts\models.py:55 .\carts\models.py:24 .\store\models.py:63
 msgid "Is active"
 msgstr "Jest aktywny"
 
-#: .\accounts\models.py:57
+#: .\accounts\models.py:56
 msgid "Is superadmin"
 msgstr "Jest superadminem"
 
-#: .\accounts\models.py:65 .\templates\admin\base.html:160
+#: .\accounts\models.py:64 .\templates\admin\base.html:160
 msgid "Account"
 msgstr "Konto Użytkownika"
 
-#: .\accounts\models.py:82 .\carts\models.py:19 .\orders\models.py:8
+#: .\accounts\models.py:81 .\carts\models.py:19 .\orders\models.py:8
 #: .\orders\models.py:31 .\orders\models.py:69 .\store\models.py:78
 msgid "User"
 msgstr "Użytkownik"
 
-#: .\accounts\models.py:83 .\orders\models.py:38
+#: .\accounts\models.py:82 .\orders\models.py:38
 msgid "Address line 1"
 msgstr "Adres 1"
 
-#: .\accounts\models.py:84 .\orders\models.py:39
+#: .\accounts\models.py:83 .\orders\models.py:39
 msgid "Address line 2"
 msgstr "Adres 2"
 
-#: .\accounts\models.py:85
+#: .\accounts\models.py:84
 msgid "Profile picture"
 msgstr "Zdjęcie profilowe"
 
-#: .\accounts\models.py:86 .\orders\models.py:42
+#: .\accounts\models.py:85 .\orders\models.py:42
 msgid "City"
 msgstr "Miasto"
 
-#: .\accounts\models.py:87 .\orders\models.py:41
+#: .\accounts\models.py:86 .\orders\models.py:41
 msgid "State"
 msgstr "Województwo"
 
-#: .\accounts\models.py:88 .\orders\models.py:40
+#: .\accounts\models.py:87 .\orders\models.py:40
 msgid "Country"
 msgstr "Kraj"
 
-#: .\accounts\models.py:91
+#: .\accounts\models.py:90
 msgid "User Profile"
 msgstr "Profil Użytkownika"
 
-#: .\accounts\models.py:92
+#: .\accounts\models.py:91
 msgid "User Profiles"
 msgstr "Profile Użytkowników"
 
@@ -152,7 +152,7 @@ msgstr "Koszyk Przedmiot"
 msgid "Cart Items"
 msgstr "Koszyk Przedmioty"
 
-#: .\category\apps.py:8 .\category\models.py:14
+#: .\category\apps.py:8 .\category\models.py:16
 msgid "Categories"
 msgstr "Kategorie"
 
@@ -168,11 +168,7 @@ msgstr "Skrót adresu URL"
 msgid "Describtion"
 msgstr "Opis"
 
-#: .\category\models.py:10
-msgid "Category Image"
-msgstr "Obraz kategorii"
-
-#: .\category\models.py:13 .\store\models.py:17
+#: .\category\models.py:15 .\store\models.py:17
 msgid "Category"
 msgstr "Kategoria"
 
@@ -208,6 +204,22 @@ msgstr "Płatność"
 #: .\orders\models.py:17
 msgid "Payments"
 msgstr "Płatności"
+
+#: .\orders\models.py:25
+msgid "New"
+msgstr "Nowy"
+
+#: .\orders\models.py:26
+msgid "Accepted"
+msgstr "Zaakceptowano"
+
+#: .\orders\models.py:27
+msgid "Completed"
+msgstr "Zakończono"
+
+#: .\orders\models.py:28
+msgid "Cancelled"
+msgstr "Odmowa"
 
 #: .\orders\models.py:33
 msgid "Order number"
@@ -346,7 +358,7 @@ msgstr "Marzec"
 msgid "Change password"
 msgstr "Zmień hasło"
 
-#: .\templates\admin\base.html:167 .\zielonaszkola\settings.py:179
+#: .\templates\admin\base.html:167 .\zielonaszkola\settings.py:180
 msgid "Home"
 msgstr "Strona główna"
 
@@ -384,6 +396,7 @@ msgstr "Konfiguracja interfejsu użytkownika"
 msgid "Copy this info your settings file to persist these UI changes"
 msgstr "Skopiuj te informacje do pliku ustawień, aby zachować zmiany w interfejsie użytkownika"
 
+
 #: .\templates\admin\base.html:361
 msgid "Close"
 msgstr "Zamknij"
@@ -392,7 +405,7 @@ msgstr "Zamknij"
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: .\templates\admin\base_site.html:25 .\zielonaszkola\settings.py:186
+#: .\templates\admin\base_site.html:25 .\zielonaszkola\settings.py:187
 msgid "View site"
 msgstr "Odwiedź strone"
 
@@ -1609,9 +1622,7 @@ msgstr "Nie znaleziono %(verbose_name) pasujących do zapytania"
 
 #: .\virtualenviroment\Lib\site-packages\django\views\generic\list.py:70
 msgid "Page is not “last”, nor can it be converted to an int."
-msgstr ""
-"Strona nie jest „ostatnia” i nie można jej przekonwertować na liczbę typu "
-"int."
+msgstr "Strona nie jest „ostatnia” i nie można jej przekonwertować na liczbę typu int."
 
 #: .\virtualenviroment\Lib\site-packages\django\views\generic\list.py:77
 #, python-format
@@ -1698,7 +1709,7 @@ msgstr "Łapacz IP"
 msgid "Polish"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:115 .\zielonaszkola\settings.py:183
+#: .\zielonaszkola\settings.py:115 .\zielonaszkola\settings.py:184
 msgid "English"
 msgstr "Angielski"
 
@@ -1706,7 +1717,7 @@ msgstr "Angielski"
 msgid "German"
 msgstr "Niemiecki"
 
-#: .\zielonaszkola\settings.py:117 .\zielonaszkola\settings.py:184
+#: .\zielonaszkola\settings.py:117 .\zielonaszkola\settings.py:185
 msgid "Spanish"
 msgstr "Hiszpański"
 
@@ -1714,11 +1725,11 @@ msgstr "Hiszpański"
 msgid "Welcome to the admin panel login"
 msgstr "Witaj w panelu administratora"
 
-#: .\zielonaszkola\settings.py:182
+#: .\zielonaszkola\settings.py:183
 msgid "Polski"
 msgstr "Polski"
 
-#: .\zielonaszkola\settings.py:185
+#: .\zielonaszkola\settings.py:186
 msgid "Deutsh"
 msgstr "Niemiecki"
 
@@ -1729,6 +1740,9 @@ msgstr "ZielonaSzkółka"
 #: .\zielonaszkola\urls.py:41
 msgid "Welcome to admin panel!"
 msgstr "Witaj w panelu administratora"
+
+#~ msgid "Category Image"
+#~ msgstr "Obraz kategorii"
 
 #~ msgid "ManagementForm data is missing or has been tampered with"
 #~ msgstr "Brakuje danych ManagementForm lub zostały one zmodyfikowane"
@@ -1741,15 +1755,3 @@ msgstr "Witaj w panelu administratora"
 
 #~ msgid "Django: the Web framework for perfectionists with deadlines."
 #~ msgstr "Django: framework sieciowy dla perfekcjonistów z terminami."
-
-#~ msgid "New"
-#~ msgstr "Nowy"
-
-#~ msgid "Accepted"
-#~ msgstr "Zaakceptowano"
-
-#~ msgid "Completed"
-#~ msgstr "Zakończono"
-
-#~ msgid "Cancelled"
-#~ msgstr "Odmowa"

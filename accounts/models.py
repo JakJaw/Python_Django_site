@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 
-# Create your models here.
 
 class Myaccountmanager(BaseUserManager):
     def create_user (self, first_name, last_name, username, email, password=None):

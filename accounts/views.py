@@ -40,7 +40,7 @@ def register(request):
             #Stwórz profil z domyślnymi danymi
             profile = UserProfile()
             profile.user_id = user.id
-            profile.profile_picture = 'default/default_user.png'
+            profile.profile_picture = "userprofile/default/default.jpg"
             profile.save()
             
             # Aktywacja konta użytkownika za pomocą załącznika w emailu

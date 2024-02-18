@@ -22,6 +22,7 @@ def payments(request):
         amount_paid = order.order_total,
         status = body['status'],
     )
+    
     payment.save()
     order.payment = payment
     order.is_ordered = True
@@ -72,8 +73,6 @@ def payments(request):
         'transID': payment.payment_id,
     }
     return JsonResponse(data)
-        
-    return render(request, 'orders/payments.html')
 
 def place_order(request, total=0, quantity=0):
     current_user = request.user
@@ -111,6 +110,7 @@ def place_order(request, total=0, quantity=0):
             data.tax = tax
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
+            
             yr = int(datetime.date.today().strftime('%Y'))
             mt = int(datetime.date.today().strftime('%m'))
             dt = int(datetime.date.today().strftime('%d'))

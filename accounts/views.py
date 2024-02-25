@@ -26,7 +26,6 @@ def register(request):
         form = RegistrationForm(request.POST)
         #Jeśli formularz ma wszystkie pola wypełnione
         if form.is_valid():
-            #Używa czystych danych, aby pobrać wartości z request
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
             phone_number = form.cleaned_data['phone_number']

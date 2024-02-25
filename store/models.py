@@ -100,5 +100,5 @@ class ProductGallery(models.Model):
         return self.product.product_name
     
     class Meta:
-        verbose_name = _('Product Gallery')
-        verbose_name_plural = _('Products Galleries')
+        verbose_name = _('Products Gallery')
+        verbose_name_plural = _('Products Gallery')

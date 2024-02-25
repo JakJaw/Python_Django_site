@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="container" style="margin: 0 auto;width: 50%;padding: 50px;background: #f1f1f1;margin-top: 50px;margin-bottom: 50px;">
+<div class="container" style="margin: 0 auto;width: 50%;padding: 50px;background: #ffe6a6;margin-top: 50px;margin-bottom: 200px; border-style: double;border-color: #4c102a;">
     <div class="row invoice row-printable">
         <div class="col-md-12">
             <div class="panel panel-default plain" id="dash_0">
@@ -64,15 +64,15 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th colspan="2" class="text-right">Suma cen: </th>
+                                                <th colspan="2" class="text-right">Wartość koszyka: </th>
                                                 <th class="text-center">{{ subtotal|floatformat:2 }} zł</th>
                                             </tr>
                                             <tr>
-                                                <th colspan="2" class="text-right">Podatek: </th>
-                                                <th class="text-center">{{ order.tax|floatformat:2 }} zł</th>
+                                                <th colspan="2" class="text-right">Dostawa: </th>
+                                                <th class="text-center">12.50 zł</th>
                                             </tr>
                                             <tr>
-                                                <th colspan="2" class="text-right">Suma z podatkiem: </th>
+                                                <th colspan="2" class="text-right">Suma: </th>
                                                 <th class="text-center">{{ order.order_total|floatformat:2 }} zł</th>
                                             </tr>
                                         </tfoot>

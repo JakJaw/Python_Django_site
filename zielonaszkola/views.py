@@ -3,7 +3,8 @@ from store.models import Product, ReviewRating
 
 
 def home(request):
-    products = Product.objects.all().filter(is_available=True).order_by('created_date')
+    #Get the 12 newest products
+    products = Product.objects.all().filter(is_available=True).order_by('-created_date')[:12]
     
     #Get the reviews
     for product in products:

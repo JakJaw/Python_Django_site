@@ -42,7 +42,6 @@ class Order(models.Model):
     city = models.CharField(max_length=50, verbose_name=_('City'))
     order_note = models.CharField(max_length=100, blank=True, verbose_name=_('Order note'))
     order_total = models.FloatField(verbose_name=_('Order total'))
-    tax = models.FloatField(verbose_name=_('Tax'))
     status = models.CharField(max_length=10, choices=STATUS, default='New', verbose_name=_('Status'))
     ip = models.CharField(blank=True, max_length=20, verbose_name=_('IP'))
     is_ordered = models.BooleanField(default=False, verbose_name=_('Is ordered'))

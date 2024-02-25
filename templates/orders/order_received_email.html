@@ -3,7 +3,7 @@
 
 Dzień dobry {{ user.first_name }},
 
-Odebraliśmy zamówienie Numer: {{ order.order_number }}
+Odebraliśmy zamówienie Numer: {{ order.order_number }} na kwotę {{ order.order_total|floatformat:2 }} zł.
 Link do zamówienia: http://{{ current_site }}{% url 'order_detail' order_id=order.order_number %}
 Informujemy, że zakupione przez Ciebie towary zostały spakowane i czekają na kuriera.
 

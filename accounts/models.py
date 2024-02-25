@@ -47,7 +47,6 @@ class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=100, unique=True, verbose_name=_('Email'))
     phone_number = models.CharField(max_length=50, verbose_name=_('Phone number'))
     
-    # required
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name=_('Date joined'))
     last_login = models.DateTimeField(auto_now_add=True, verbose_name=_('Last login'))
     is_admin = models.BooleanField(default=False, verbose_name=_('Is admin'))

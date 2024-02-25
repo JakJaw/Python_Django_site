@@ -83,13 +83,12 @@ def place_order(request, total=0, quantity=0):
         return redirect('store')
     
     grand_total = 0
-    tax = 0
     for cart_item in cart_items:
         total += (cart_item.product.price * cart_item.quantity)
         total = round(total, 2)
         quantity += cart_item.quantity
-    tax = round(((23 * total)/100), 2)
-    grand_total = round(total + tax, 2)
+    delivery = 12.50
+    grand_total = total + delivery
     
     if request.method == 'POST':
         form = OrderForm(request.POST)
@@ -107,7 +106,6 @@ def place_order(request, total=0, quantity=0):
             data.city = form.cleaned_data['city']
             data.order_note = form.cleaned_data['order_note']
             data.order_total = grand_total
-            data.tax = tax
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
             
@@ -125,7 +123,7 @@ def place_order(request, total=0, quantity=0):
                 'order': order,
                 'cart_items': cart_items,
                 'total': total,
-                'tax': tax,
+                'delivery': delivery,
                 'grand_total': grand_total,
             }
             return render(request, 'orders/payments.html', context)
@@ -142,14 +140,15 @@ def order_complete(request):
         ordered_products = OrderProduct.objects.filter(order_id=order.id)
         
         subtotal = 0
+        delivery = 12.50
         for i in ordered_products:
             subtotal += i.product_price * i.quantity
                 
         payment = Payment.objects.get(payment_id=transID)
-
         
         context = {
             'order': order,
+            'delivery': delivery,
             'ordered_products': ordered_products,
             'order_number': order.order_number,
             'transID': payment.payment_id,

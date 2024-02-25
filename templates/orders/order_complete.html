@@ -74,15 +74,15 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th colspan="2" class="text-right">Suma cen: </th>
+                                                <th colspan="2" class="text-right">Wartość koszyka: </th>
                                                 <th class="text-center">{{ subtotal|floatformat:2 }} zł</th>
                                             </tr>
                                             <tr>
-                                                <th colspan="2" class="text-right">Podatek: </th>
-                                                <th class="text-center">{{ order.tax|floatformat:2 }} zł</th>
+                                                <th colspan="2" class="text-right">Dostawa: </th>
+                                                <th class="text-center">{{ delivery|floatformat:2 }} zł</th>
                                             </tr>
                                             <tr>
-                                                <th colspan="2" class="text-right">Suma z podatkiem: </th>
+                                                <th colspan="2" class="text-right">Suma: </th>
                                                 <th class="text-center">{{ order.order_total|floatformat:2 }} zł</th>
                                             </tr>
                                         </tfoot>

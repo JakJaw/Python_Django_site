@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-zielonaszkola-env.eba-bxmpyiar.us-west-2.elasticbeanstalk.com',
+                 '127.0.0.1',]
 
 
 INSTALLED_APPS = [
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
-SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+SESSION_EXPIRE_SECONDS = 3600  # 1 godzina
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 SESSION_TIMEOUT_REDIRECT = 'http://127.0.0.1:8000/en/accounts/login/'
 

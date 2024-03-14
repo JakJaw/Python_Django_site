@@ -345,7 +345,6 @@ p:last-child {
   color: var(--primamrybutton);
 }
 
-/* desktop only */
 /* ================ Section footer ==================  */
 .section-footer{
   background-color: var(--footer);
@@ -379,8 +378,8 @@ p:last-child {
 }
 
 .footer-bottom {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .footer-copyright {
@@ -1220,7 +1219,6 @@ a[class*=card]:hover .title {
 }
 
 .table-shopping-cart.table td, .table-shopping-cart.table th {
-  padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 .table-shopping-cart .price-wrap {

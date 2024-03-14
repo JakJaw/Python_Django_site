@@ -5,7 +5,7 @@ from django.conf import settings
 
 def switch_lang_code(path, language):
  
-    # Get the supported language codes
+    # Get lang codes
     lang_codes = [c for (c, name) in settings.LANGUAGES]
  
     # Validate the inputs
@@ -16,16 +16,16 @@ def switch_lang_code(path, language):
     elif language not in lang_codes:
         raise Exception('%s is not a supported language code' % language)
  
-    # Split the parts of the path
+    # Split the parts of the url
     parts = path.split('/')
  
-    # Add or substitute the new language prefix
+    # add language prefix
     if parts[1] in lang_codes:
         parts[1] = language
     else:
         parts[0] = "/" + language
  
-    # Return the full new path
+    # Return the new path
     return '/'.join(parts)
 
 
@@ -34,10 +34,8 @@ register = template.Library()
 @register.filter
 @stringfilter
 def switch_i18n_prefix(path, language):
-    """takes in a string path"""
     return switch_lang_code(path, language)
  
 @register.filter
 def switch_i18n(request, language):
-    """takes in a request object and gets the path from it"""
     return switch_lang_code(request.get_full_path(), language)

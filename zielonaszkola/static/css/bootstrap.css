@@ -7748,7 +7748,7 @@ button.bg-gray-light:focus {
 
 .mb-3,
 .my-3 {
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .ml-3,
@@ -7863,7 +7863,7 @@ button.bg-gray-light:focus {
 
 .pr-2,
 .px-2 {
-  padding-right: 0.5rem !important;
+  padding-right: 0.2rem !important;
 }
 
 .pb-2,
@@ -7873,7 +7873,7 @@ button.bg-gray-light:focus {
 
 .pl-2,
 .px-2 {
-  padding-left: 0.5rem !important;
+  padding-left: 0.2rem !important;
 }
 
 .p-3 {
@@ -7897,7 +7897,8 @@ button.bg-gray-light:focus {
 
 .pl-3,
 .px-3 {
-  padding-left: 1rem !important;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
 }
 
 .p-4 {
@@ -8976,6 +8977,8 @@ button.bg-gray-light:focus {
   .mb-lg-0,
 .my-lg-0 {
     margin-bottom: 0 !important;
+    margin-right: 2rem !important;
+    margin-left: 2rem !important;
   }
 
   .ml-lg-0,

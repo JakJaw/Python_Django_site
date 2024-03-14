@@ -48,7 +48,7 @@
             <p>{{ single_product.description }}</p>
 
             <hr>
-            {% if single_product.variation_set.kolory and single_product.variation_set.rozmiary %}
+            {% if single_product.variation_set.kolory or single_product.variation_set.rozmiary %}
             <h4>Dostępne opcje: </h4>
               {% if single_product.variation_set.kolory %}
               <div class="row" style="position:relative; left:10px;">

@@ -21,11 +21,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-#Custom Admin Titles
-"""admin.site.index_title = _('My Index Title')
-admin.site.site_header = _('My Site Administration')
-admin.site.site_title = _('My Site Management')"""
-
 # Test 1
 """urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,6 +34,7 @@ admin.site.site_title = _('My Site Management')"""
 admin.site.site_header = _("ZielonaSzkółka")
 admin.site.site_title = _("Dashboard")
 admin.site.index_title = _("Welcome to admin panel!")
+
 urlpatterns = i18n_patterns(
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('ukrytyadmin/', admin.site.urls),

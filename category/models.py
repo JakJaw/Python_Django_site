@@ -8,8 +8,8 @@ class Category(models.Model):
     slug = models.SlugField(max_length=100, unique=True, verbose_name=_('Slug'))
     describtion = models.TextField(max_length=255, blank=True, verbose_name=_('Describtion'))
     
-    #Possible extension
-    #cat_image = models.ImageField(upload_to='photos/categories/', blank=True, verbose_name=_('Category Image'))
+    #Possible extension for user click on category image in shop
+    #category_image = models.ImageField(upload_to='photos/categories/', blank=True, verbose_name=_('Category Image'))
     
     class Meta:
         verbose_name = _('Category')

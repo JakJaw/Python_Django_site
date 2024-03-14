@@ -33,7 +33,7 @@
                                         <th scope="row"><a href="{% url 'order_detail' order.order_number %}">{{ order.order_number }}</a></th>
                                         <td>{{ order.full_name }}</td>
                                         <td>{{ order.phone }}</td>
-                                        <td>{{ order.order_total }} zł</td>
+                                        <td>{{ order.order_total|floatformat:2 }} zł</td>
                                         <td>{{ order.created_at|date:"d.m.o G:i" }}</td>
                                     </tr>
                                     {% endfor %}
